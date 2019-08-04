@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mutations | Vue Apollo</title>
+    <meta name="description" content="🚀 Integrate GraphQL in your Vue.js apps!">
+    <link rel="icon" href="/vue-apollo/favicon.png">
+    
+    <link rel="preload" href="/vue-apollo/assets/css/styles.8f76b078.css" as="style"><link rel="preload" href="/vue-apollo/assets/js/app.8f76b078.js" as="script"><link rel="preload" href="/vue-apollo/assets/js/15.acdf306e.js" as="script"><link rel="prefetch" href="/vue-apollo/assets/js/26.52db218a.js"><link rel="prefetch" href="/vue-apollo/assets/css/1.styles.a0f3b9b0.css"><link rel="prefetch" href="/vue-apollo/assets/js/1.a0f3b9b0.js"><link rel="prefetch" href="/vue-apollo/assets/css/2.styles.b0036c7a.css"><link rel="prefetch" href="/vue-apollo/assets/js/2.b0036c7a.js"><link rel="prefetch" href="/vue-apollo/assets/js/3.e0e382e2.js"><link rel="prefetch" href="/vue-apollo/assets/js/4.675f2e4d.js"><link rel="prefetch" href="/vue-apollo/assets/js/5.12880ef9.js"><link rel="prefetch" href="/vue-apollo/assets/js/6.e45ff41a.js"><link rel="prefetch" href="/vue-apollo/assets/js/7.989e6aff.js"><link rel="prefetch" href="/vue-apollo/assets/js/8.2ebb489a.js"><link rel="prefetch" href="/vue-apollo/assets/js/9.36570ac6.js"><link rel="prefetch" href="/vue-apollo/assets/js/10.597f2684.js"><link rel="prefetch" href="/vue-apollo/assets/js/11.cb3d1885.js"><link rel="prefetch" href="/vue-apollo/assets/js/12.06a699e2.js"><link rel="prefetch" href="/vue-apollo/assets/js/13.4f5cf254.js"><link rel="prefetch" href="/vue-apollo/assets/js/14.5866596e.js"><link rel="prefetch" href="/vue-apollo/assets/js/16.f5aee313.js"><link rel="prefetch" href="/vue-apollo/assets/js/17.646d3dcf.js"><link rel="prefetch" href="/vue-apollo/assets/js/18.125ac48a.js"><link rel="prefetch" href="/vue-apollo/assets/js/19.9bf41322.js"><link rel="prefetch" href="/vue-apollo/assets/js/20.e962e864.js"><link rel="prefetch" href="/vue-apollo/assets/js/21.1e918d70.js"><link rel="prefetch" href="/vue-apollo/assets/js/22.0634b974.js"><link rel="prefetch" href="/vue-apollo/assets/js/23.56d9c8d3.js"><link rel="prefetch" href="/vue-apollo/assets/js/24.a7be7b2f.js"><link rel="prefetch" href="/vue-apollo/assets/js/25.765fde55.js"><link rel="prefetch" href="/vue-apollo/assets/js/27.030d3b94.js"><link rel="prefetch" href="/vue-apollo/assets/js/28.29d8f5ff.js"><link rel="prefetch" href="/vue-apollo/assets/js/29.1502ff72.js"><link rel="prefetch" href="/vue-apollo/assets/js/30.c84a7fbd.js"><link rel="prefetch" href="/vue-apollo/assets/js/31.d945e73a.js"><link rel="prefetch" href="/vue-apollo/assets/js/32.856305af.js"><link rel="prefetch" href="/vue-apollo/assets/js/33.a1d103b7.js"><link rel="prefetch" href="/vue-apollo/assets/js/34.e1aa0b7f.js"><link rel="prefetch" href="/vue-apollo/assets/js/35.338b5f6d.js"><link rel="prefetch" href="/vue-apollo/assets/js/36.d8f30036.js"><link rel="prefetch" href="/vue-apollo/assets/js/37.33a2e714.js"><link rel="prefetch" href="/vue-apollo/assets/js/38.8f6c21b0.js"><link rel="prefetch" href="/vue-apollo/assets/js/39.d546791b.js"><link rel="prefetch" href="/vue-apollo/assets/js/40.8e27e6bd.js"><link rel="prefetch" href="/vue-apollo/assets/js/41.905ab6dc.js"><link rel="prefetch" href="/vue-apollo/assets/js/42.bbe7ca81.js"><link rel="prefetch" href="/vue-apollo/assets/js/43.47369d02.js"><link rel="prefetch" href="/vue-apollo/assets/js/44.281a703c.js"><link rel="prefetch" href="/vue-apollo/assets/js/45.d4d07452.js"><link rel="prefetch" href="/vue-apollo/assets/js/46.6cbdf77c.js"><link rel="prefetch" href="/vue-apollo/assets/js/47.fcbcf70d.js"><link rel="prefetch" href="/vue-apollo/assets/js/48.8b08fb55.js"><link rel="prefetch" href="/vue-apollo/assets/js/49.b38bc17b.js"><link rel="prefetch" href="/vue-apollo/assets/js/50.bdb15caa.js"><link rel="prefetch" href="/vue-apollo/assets/js/51.0dd86c6d.js"><link rel="prefetch" href="/vue-apollo/assets/js/52.03c4b936.js"><link rel="prefetch" href="/vue-apollo/assets/js/53.0a08cfe9.js"><link rel="prefetch" href="/vue-apollo/assets/js/54.788112e4.js"><link rel="prefetch" href="/vue-apollo/assets/js/55.8fc49327.js">
+    <link rel="stylesheet" href="/vue-apollo/assets/css/1.styles.a0f3b9b0.css"><link rel="stylesheet" href="/vue-apollo/assets/css/2.styles.b0036c7a.css"><link rel="stylesheet" href="/vue-apollo/assets/css/styles.8f76b078.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vue-apollo/" class="home-link router-link-active"><!----> <span class="site-name">Vue Apollo</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-apollo/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/vue-apollo/api/" class="nav-link">API Reference</a></div><div class="nav-item"><a href="/vue-apollo/migration/" class="nav-link">Migration</a></div><div class="nav-item"><a href="https://github.com/Akryum/vue-cli-plugin-apollo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CLI plugin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.patreon.com/akryum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-apollo/guide/apollo/mutations.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/vue-apollo/zh-cn/guide/apollo/mutations.html" class="nav-link">简体中文</a></li></ul></div></div> <a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-apollo/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/vue-apollo/api/" class="nav-link">API Reference</a></div><div class="nav-item"><a href="/vue-apollo/migration/" class="nav-link">Migration</a></div><div class="nav-item"><a href="https://github.com/Akryum/vue-cli-plugin-apollo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CLI plugin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.patreon.com/akryum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-apollo/guide/apollo/mutations.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/vue-apollo/zh-cn/guide/apollo/mutations.html" class="nav-link">简体中文</a></li></ul></div></div> <a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/vue-apollo/guide/" class="sidebar-link">Introduction</a></li><li><a href="/vue-apollo/guide/installation.html" class="sidebar-link">Installation</a></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Basic usage</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/apollo/" class="sidebar-link">Usage in Vue components</a></li><li><a href="/vue-apollo/guide/apollo/queries.html" class="sidebar-link">Queries</a></li><li><a href="/vue-apollo/guide/apollo/mutations.html" class="active sidebar-link">Mutations</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/mutations.html#server-side-example" class="sidebar-link">Server-side example</a></li></ul></li><li><a href="/vue-apollo/guide/apollo/subscriptions.html" class="sidebar-link">Subscriptions</a></li><li><a href="/vue-apollo/guide/apollo/pagination.html" class="sidebar-link">Pagination with fetchMore</a></li><li><a href="/vue-apollo/guide/apollo/special-options.html" class="sidebar-link">Special options</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Components</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/components/" class="sidebar-link">What are Apollo components?</a></li><li><a href="/vue-apollo/guide/components/query.html" class="sidebar-link">ApolloQuery</a></li><li><a href="/vue-apollo/guide/components/mutation.html" class="sidebar-link">ApolloMutation</a></li><li><a href="/vue-apollo/guide/components/subscribe-to-more.html" class="sidebar-link">ApolloSubscribeToMore</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Advanced topics</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/multiple-clients.html" class="sidebar-link">Multiple clients</a></li><li><a href="/vue-apollo/guide/ssr.html" class="sidebar-link">Server-Side Rendering</a></li><li><a href="/vue-apollo/guide/local-state.html" class="sidebar-link">Local state</a></li><li><a href="/vue-apollo/guide/testing.html" class="sidebar-link">Testing</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="mutations"><a href="#mutations" aria-hidden="true" class="header-anchor">#</a> Mutations</h1> <p>Mutations are queries that change your data state on your apollo server.</p> <p>Use <code>this.$apollo.mutate()</code> to send a GraphQL mutation.</p> <p>For more info, visit the <a href="https://www.apollographql.com/docs/react/api/apollo-client.html#ApolloClient.mutate" target="_blank" rel="noopener noreferrer">apollo doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. There is a mutation-focused <a href="https://github.com/Akryum/vue-apollo-todos" target="_blank" rel="noopener noreferrer">example app<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> you can look at.</p> <div class="warning custom-block"><p class="custom-block-title">WARNING</p> <p>You shouldn't send the <code>__typename</code> fields in the variables, so it is not recommended to send an Apollo result object directly.</p></div> <div class="language-js extra-class"><pre class="language-js"><code>methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token function">addTag</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// We save the user input in case of an error</span>
+    <span class="token keyword">const</span> newTag <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>newTag
+    <span class="token comment">// We clear it early to give the UI a snappy feel</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>newTag <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token comment">// Call to the graphql mutation</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// Query</span>
+      mutation<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`mutation ($label: String!) {
+        addTag(label: $label) {
+          id
+          label
+        }
+      }`</span></span><span class="token punctuation">,</span>
+      <span class="token comment">// Parameters</span>
+      variables<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        label<span class="token punctuation">:</span> newTag<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Update the cache with the result</span>
+      <span class="token comment">// The query will be updated with the optimistic response</span>
+      <span class="token comment">// and then with the real result of the mutation</span>
+      update<span class="token punctuation">:</span> <span class="token punctuation">(</span>store<span class="token punctuation">,</span> <span class="token punctuation">{</span> data<span class="token punctuation">:</span> <span class="token punctuation">{</span> addTag <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Read the data from our cache for this query.</span>
+        <span class="token keyword">const</span> data <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">readQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span> query<span class="token punctuation">:</span> <span class="token constant">TAGS_QUERY</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token comment">// Add our tag from the mutation to the end</span>
+        data<span class="token punctuation">.</span>tags<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>addTag<span class="token punctuation">)</span>
+        <span class="token comment">// Write our data back to the cache.</span>
+        store<span class="token punctuation">.</span><span class="token function">writeQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span> query<span class="token punctuation">:</span> <span class="token constant">TAGS_QUERY</span><span class="token punctuation">,</span> data <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Optimistic UI</span>
+      <span class="token comment">// Will be treated as a 'fake' result as soon as the request is made</span>
+      <span class="token comment">// so that the UI can react quickly and the user be happy</span>
+      optimisticResponse<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        __typename<span class="token punctuation">:</span> <span class="token string">'Mutation'</span><span class="token punctuation">,</span>
+        addTag<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          __typename<span class="token punctuation">:</span> <span class="token string">'Tag'</span><span class="token punctuation">,</span>
+          id<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
+          label<span class="token punctuation">:</span> newTag<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Result</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Error</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+      <span class="token comment">// We restore the initial user input</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>newTag <span class="token operator">=</span> newTag
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h2 id="server-side-example"><a href="#server-side-example" aria-hidden="true" class="header-anchor">#</a> Server-side example</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+type Tag {
+  id: Int
+  label: String
+}
+
+type Query {
+  tags: [Tag]
+}
+
+type Mutation {
+  addTag(label: String!): Tag
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+`</span></span>
+
+<span class="token comment">// Fake word generator</span>
+<span class="token keyword">import</span> faker <span class="token keyword">from</span> <span class="token string">'faker'</span>
+
+<span class="token comment">// Let's generate some tags</span>
+<span class="token keyword">var</span> id <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">var</span> tags <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">42</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">addTag</span><span class="token punctuation">(</span>faker<span class="token punctuation">.</span>random<span class="token punctuation">.</span><span class="token function">word</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">addTag</span><span class="token punctuation">(</span>label<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> id<span class="token operator">++</span><span class="token punctuation">,</span>
+    label<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  tags<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> t
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> resolvers <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Query<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">tags</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> args<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> tags
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  Mutation<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">addTag</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token punctuation">{</span> label <span class="token punctuation">}</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`adding tag '</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>label<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">'`</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token function">addTag</span><span class="token punctuation">(</span>label<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Akryum/vue-apollo/edit/master/docs/guide/apollo/mutations.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/13/2018, 7:11:27 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vue-apollo/guide/apollo/queries.html" class="prev">
+          Queries
+        </a></span> <span class="next"><a href="/vue-apollo/guide/apollo/subscriptions.html">
+          Subscriptions
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/vue-apollo/assets/js/15.acdf306e.js" defer></script><script src="/vue-apollo/assets/js/app.8f76b078.js" defer></script>
+  </body>
+</html>

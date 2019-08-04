@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Subscriptions | Vue Apollo</title>
+    <meta name="description" content="🚀 Integrate GraphQL in your Vue.js apps!">
+    <link rel="icon" href="/vue-apollo/favicon.png">
+    
+    <link rel="preload" href="/vue-apollo/assets/css/styles.8f76b078.css" as="style"><link rel="preload" href="/vue-apollo/assets/js/app.8f76b078.js" as="script"><link rel="preload" href="/vue-apollo/assets/js/19.9bf41322.js" as="script"><link rel="prefetch" href="/vue-apollo/assets/js/26.52db218a.js"><link rel="prefetch" href="/vue-apollo/assets/css/1.styles.a0f3b9b0.css"><link rel="prefetch" href="/vue-apollo/assets/js/1.a0f3b9b0.js"><link rel="prefetch" href="/vue-apollo/assets/css/2.styles.b0036c7a.css"><link rel="prefetch" href="/vue-apollo/assets/js/2.b0036c7a.js"><link rel="prefetch" href="/vue-apollo/assets/js/3.e0e382e2.js"><link rel="prefetch" href="/vue-apollo/assets/js/4.675f2e4d.js"><link rel="prefetch" href="/vue-apollo/assets/js/5.12880ef9.js"><link rel="prefetch" href="/vue-apollo/assets/js/6.e45ff41a.js"><link rel="prefetch" href="/vue-apollo/assets/js/7.989e6aff.js"><link rel="prefetch" href="/vue-apollo/assets/js/8.2ebb489a.js"><link rel="prefetch" href="/vue-apollo/assets/js/9.36570ac6.js"><link rel="prefetch" href="/vue-apollo/assets/js/10.597f2684.js"><link rel="prefetch" href="/vue-apollo/assets/js/11.cb3d1885.js"><link rel="prefetch" href="/vue-apollo/assets/js/12.06a699e2.js"><link rel="prefetch" href="/vue-apollo/assets/js/13.4f5cf254.js"><link rel="prefetch" href="/vue-apollo/assets/js/14.5866596e.js"><link rel="prefetch" href="/vue-apollo/assets/js/15.acdf306e.js"><link rel="prefetch" href="/vue-apollo/assets/js/16.f5aee313.js"><link rel="prefetch" href="/vue-apollo/assets/js/17.646d3dcf.js"><link rel="prefetch" href="/vue-apollo/assets/js/18.125ac48a.js"><link rel="prefetch" href="/vue-apollo/assets/js/20.e962e864.js"><link rel="prefetch" href="/vue-apollo/assets/js/21.1e918d70.js"><link rel="prefetch" href="/vue-apollo/assets/js/22.0634b974.js"><link rel="prefetch" href="/vue-apollo/assets/js/23.56d9c8d3.js"><link rel="prefetch" href="/vue-apollo/assets/js/24.a7be7b2f.js"><link rel="prefetch" href="/vue-apollo/assets/js/25.765fde55.js"><link rel="prefetch" href="/vue-apollo/assets/js/27.030d3b94.js"><link rel="prefetch" href="/vue-apollo/assets/js/28.29d8f5ff.js"><link rel="prefetch" href="/vue-apollo/assets/js/29.1502ff72.js"><link rel="prefetch" href="/vue-apollo/assets/js/30.c84a7fbd.js"><link rel="prefetch" href="/vue-apollo/assets/js/31.d945e73a.js"><link rel="prefetch" href="/vue-apollo/assets/js/32.856305af.js"><link rel="prefetch" href="/vue-apollo/assets/js/33.a1d103b7.js"><link rel="prefetch" href="/vue-apollo/assets/js/34.e1aa0b7f.js"><link rel="prefetch" href="/vue-apollo/assets/js/35.338b5f6d.js"><link rel="prefetch" href="/vue-apollo/assets/js/36.d8f30036.js"><link rel="prefetch" href="/vue-apollo/assets/js/37.33a2e714.js"><link rel="prefetch" href="/vue-apollo/assets/js/38.8f6c21b0.js"><link rel="prefetch" href="/vue-apollo/assets/js/39.d546791b.js"><link rel="prefetch" href="/vue-apollo/assets/js/40.8e27e6bd.js"><link rel="prefetch" href="/vue-apollo/assets/js/41.905ab6dc.js"><link rel="prefetch" href="/vue-apollo/assets/js/42.bbe7ca81.js"><link rel="prefetch" href="/vue-apollo/assets/js/43.47369d02.js"><link rel="prefetch" href="/vue-apollo/assets/js/44.281a703c.js"><link rel="prefetch" href="/vue-apollo/assets/js/45.d4d07452.js"><link rel="prefetch" href="/vue-apollo/assets/js/46.6cbdf77c.js"><link rel="prefetch" href="/vue-apollo/assets/js/47.fcbcf70d.js"><link rel="prefetch" href="/vue-apollo/assets/js/48.8b08fb55.js"><link rel="prefetch" href="/vue-apollo/assets/js/49.b38bc17b.js"><link rel="prefetch" href="/vue-apollo/assets/js/50.bdb15caa.js"><link rel="prefetch" href="/vue-apollo/assets/js/51.0dd86c6d.js"><link rel="prefetch" href="/vue-apollo/assets/js/52.03c4b936.js"><link rel="prefetch" href="/vue-apollo/assets/js/53.0a08cfe9.js"><link rel="prefetch" href="/vue-apollo/assets/js/54.788112e4.js"><link rel="prefetch" href="/vue-apollo/assets/js/55.8fc49327.js">
+    <link rel="stylesheet" href="/vue-apollo/assets/css/1.styles.a0f3b9b0.css"><link rel="stylesheet" href="/vue-apollo/assets/css/2.styles.b0036c7a.css"><link rel="stylesheet" href="/vue-apollo/assets/css/styles.8f76b078.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vue-apollo/" class="home-link router-link-active"><!----> <span class="site-name">Vue Apollo</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-apollo/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/vue-apollo/api/" class="nav-link">API Reference</a></div><div class="nav-item"><a href="/vue-apollo/migration/" class="nav-link">Migration</a></div><div class="nav-item"><a href="https://github.com/Akryum/vue-cli-plugin-apollo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CLI plugin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.patreon.com/akryum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-apollo/guide/apollo/subscriptions.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/vue-apollo/zh-cn/guide/apollo/subscriptions.html" class="nav-link">简体中文</a></li></ul></div></div> <a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-apollo/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/vue-apollo/api/" class="nav-link">API Reference</a></div><div class="nav-item"><a href="/vue-apollo/migration/" class="nav-link">Migration</a></div><div class="nav-item"><a href="https://github.com/Akryum/vue-cli-plugin-apollo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CLI plugin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.patreon.com/akryum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-apollo/guide/apollo/subscriptions.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/vue-apollo/zh-cn/guide/apollo/subscriptions.html" class="nav-link">简体中文</a></li></ul></div></div> <a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/vue-apollo/guide/" class="sidebar-link">Introduction</a></li><li><a href="/vue-apollo/guide/installation.html" class="sidebar-link">Installation</a></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Basic usage</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/apollo/" class="sidebar-link">Usage in Vue components</a></li><li><a href="/vue-apollo/guide/apollo/queries.html" class="sidebar-link">Queries</a></li><li><a href="/vue-apollo/guide/apollo/mutations.html" class="sidebar-link">Mutations</a></li><li><a href="/vue-apollo/guide/apollo/subscriptions.html" class="active sidebar-link">Subscriptions</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/subscriptions.html#setup" class="sidebar-link">Setup</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/subscriptions.html#subscribe-to-more" class="sidebar-link">Subscribe To More</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/subscriptions.html#simple-subscription" class="sidebar-link">Simple subscription</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/subscriptions.html#skipping-the-subscription" class="sidebar-link">Skipping the subscription</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/subscriptions.html#manually-adding-a-smart-subscription" class="sidebar-link">Manually adding a smart Subscription</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/subscriptions.html#standard-apollo-subscribe" class="sidebar-link">Standard Apollo subscribe</a></li></ul></li><li><a href="/vue-apollo/guide/apollo/pagination.html" class="sidebar-link">Pagination with fetchMore</a></li><li><a href="/vue-apollo/guide/apollo/special-options.html" class="sidebar-link">Special options</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Components</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/components/" class="sidebar-link">What are Apollo components?</a></li><li><a href="/vue-apollo/guide/components/query.html" class="sidebar-link">ApolloQuery</a></li><li><a href="/vue-apollo/guide/components/mutation.html" class="sidebar-link">ApolloMutation</a></li><li><a href="/vue-apollo/guide/components/subscribe-to-more.html" class="sidebar-link">ApolloSubscribeToMore</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Advanced topics</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/multiple-clients.html" class="sidebar-link">Multiple clients</a></li><li><a href="/vue-apollo/guide/ssr.html" class="sidebar-link">Server-Side Rendering</a></li><li><a href="/vue-apollo/guide/local-state.html" class="sidebar-link">Local state</a></li><li><a href="/vue-apollo/guide/testing.html" class="sidebar-link">Testing</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="subscriptions"><a href="#subscriptions" aria-hidden="true" class="header-anchor">#</a> Subscriptions</h1> <h2 id="setup"><a href="#setup" aria-hidden="true" class="header-anchor">#</a> Setup</h2> <p><em>For the server implementation, you can take a look at <a href="https://github.com/Akryum/apollo-server-example" target="_blank" rel="noopener noreferrer">this simple example<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</em></p> <p>To enable the websocket-based subscription, a bit of additional setup is required:</p> <div class="language- extra-class"><pre class="language-text"><code>npm install --save apollo-link-ws apollo-utilities
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ApolloClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-client'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HttpLink <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-link-http'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> InMemoryCache <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-cache-inmemory'</span>
+<span class="token comment">// New Imports</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> split <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-link'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> WebSocketLink <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-link-ws'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getMainDefinition <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-utilities'</span>
+
+<span class="token keyword">import</span> VueApollo <span class="token keyword">from</span> <span class="token string">'vue-apollo'</span>
+
+<span class="token keyword">const</span> httpLink <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HttpLink</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// You should use an absolute URL here</span>
+  uri<span class="token punctuation">:</span> <span class="token string">'http://localhost:3020/graphql'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Create the subscription websocket link</span>
+<span class="token keyword">const</span> wsLink <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocketLink</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  uri<span class="token punctuation">:</span> <span class="token string">'ws://localhost:3000/subscriptions'</span><span class="token punctuation">,</span>
+  options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    reconnect<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// using the ability to split links, you can send data to each link</span>
+<span class="token comment">// depending on what kind of operation is being sent</span>
+<span class="token keyword">const</span> link <span class="token operator">=</span> <span class="token function">split</span><span class="token punctuation">(</span>
+  <span class="token comment">// split based on operation type</span>
+  <span class="token punctuation">(</span><span class="token punctuation">{</span> query <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> kind<span class="token punctuation">,</span> operation <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">getMainDefinition</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> kind <span class="token operator">===</span> <span class="token string">'OperationDefinition'</span> <span class="token operator">&amp;&amp;</span>
+      operation <span class="token operator">===</span> <span class="token string">'subscription'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  wsLink<span class="token punctuation">,</span>
+  httpLink
+<span class="token punctuation">)</span>
+
+<span class="token comment">// Create the apollo client</span>
+<span class="token keyword">const</span> apolloClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApolloClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  link<span class="token punctuation">,</span>
+  cache<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">InMemoryCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  connectToDevTools<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Install the vue plugin like before</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueApollo<span class="token punctuation">)</span>
+</code></pre></div><h2 id="subscribe-to-more"><a href="#subscribe-to-more" aria-hidden="true" class="header-anchor">#</a> Subscribe To More</h2> <p>If you need to update a query result from a subscription, the best way is using the <code>subscribeToMore</code> query method. It will create <a href="/vue-apollo/api/smart-subscription.html">Smart Subscriptions</a> that are linked to the query. Just add a <code>subscribeToMore</code> to your query:</p> <div class="language-js extra-class"><pre class="language-js"><code>apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  tags<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    query<span class="token punctuation">:</span> <span class="token constant">TAGS_QUERY</span><span class="token punctuation">,</span>
+    subscribeToMore<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      document<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`subscription name($param: String!) {
+        itemAdded(param: $param) {
+          id
+          label
+        }
+      }`</span></span><span class="token punctuation">,</span>
+      <span class="token comment">// Variables passed to the subscription. Since we're using a function,</span>
+      <span class="token comment">// they are reactive</span>
+      <span class="token function">variables</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          param<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>param<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Mutate the previous result</span>
+      updateQuery<span class="token punctuation">:</span> <span class="token punctuation">(</span>previousResult<span class="token punctuation">,</span> <span class="token punctuation">{</span> subscriptionData <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Here, return the new result from the previous with the new data</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>Note that you can pass an array of subscriptions to <code>subscribeToMore</code> to subscribe to multiple subscriptions on this query.</p></div> <h3 id="alternate-usage"><a href="#alternate-usage" aria-hidden="true" class="header-anchor">#</a> Alternate usage</h3> <p>You can access the queries you defined in the <code>apollo</code> option with <code>this.$apollo.queries.&lt;name&gt;</code>, so it would look like this:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span>queries<span class="token punctuation">.</span>tags<span class="token punctuation">.</span><span class="token function">subscribeToMore</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// GraphQL document</span>
+  document<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`subscription name($param: String!) {
+    itemAdded(param: $param) {
+      id
+      label
+    }
+  }`</span></span><span class="token punctuation">,</span>
+  <span class="token comment">// Variables passed to the subscription</span>
+  variables<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    param<span class="token punctuation">:</span> <span class="token string">'42'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// Mutate the previous result</span>
+  updateQuery<span class="token punctuation">:</span> <span class="token punctuation">(</span>previousResult<span class="token punctuation">,</span> <span class="token punctuation">{</span> subscriptionData <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Here, return the new result from the previous with the new data</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>If the related query is stopped, the subscription will be automatically destroyed.</p> <p>Here is an example:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Subscription GraphQL document</span>
+<span class="token keyword">const</span> <span class="token constant">TAG_ADDED</span> <span class="token operator">=</span> gql<span class="token template-string"><span class="token string">`subscription tags($type: String!) {
+  tagAdded(type: $type) {
+    id
+    label
+    type
+  }
+}`</span></span>
+
+<span class="token comment">// SubscribeToMore tags</span>
+<span class="token comment">// We have different types of tags</span>
+<span class="token comment">// with one subscription 'channel' for each type</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token punctuation">,</span> <span class="token punctuation">(</span>type<span class="token punctuation">,</span> oldType<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">!==</span> oldType <span class="token operator">||</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>tagsSub<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// We need to unsubscribe before re-subscribing</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tagsSub<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tagsSub<span class="token punctuation">.</span><span class="token function">unsubscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// Subscribe on the query</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tagsSub <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span>queries<span class="token punctuation">.</span>tags<span class="token punctuation">.</span><span class="token function">subscribeToMore</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      document<span class="token punctuation">:</span> <span class="token constant">TAG_ADDED</span><span class="token punctuation">,</span>
+      variables<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Mutate the previous result</span>
+      updateQuery<span class="token punctuation">:</span> <span class="token punctuation">(</span>previousResult<span class="token punctuation">,</span> <span class="token punctuation">{</span> subscriptionData <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// If we added the tag already don't do anything</span>
+        <span class="token comment">// This can be caused by the `updateQuery` of our addTag mutation</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>previousResult<span class="token punctuation">.</span>tags<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>tag <span class="token operator">=&gt;</span> tag<span class="token punctuation">.</span>id <span class="token operator">===</span> subscriptionData<span class="token punctuation">.</span>data<span class="token punctuation">.</span>tagAdded<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> previousResult
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          tags<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token operator">...</span>previousResult<span class="token punctuation">.</span>tags<span class="token punctuation">,</span>
+            <span class="token comment">// Add the new tag</span>
+            subscriptionData<span class="token punctuation">.</span>data<span class="token punctuation">.</span>tagAdded<span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  immediate<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="simple-subscription"><a href="#simple-subscription" aria-hidden="true" class="header-anchor">#</a> Simple subscription</h2> <div class="danger custom-block"><p class="custom-block-title">WARNING</p> <p>If you want to update a query with the result of the subscription, use <code>subscribeToMore</code>.
+The methods below are suitable for a 'notify' use case</p></div> <p>You can declare <a href="/vue-apollo/api/smart-subscription.html">Smart Subscriptions</a> in the <code>apollo</code> option with the <code>$subscribe</code> keyword:</p> <div class="language-js extra-class"><pre class="language-js"><code>apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Subscriptions</span>
+  $subscribe<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// When a tag is added</span>
+    tagAdded<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`subscription tags($type: String!) {
+        tagAdded(type: $type) {
+          id
+          label
+          type
+        }
+      }`</span></span><span class="token punctuation">,</span>
+      <span class="token comment">// Reactive variables</span>
+      <span class="token function">variables</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// This works just like regular queries</span>
+        <span class="token comment">// and will re-subscribe with the right variables</span>
+        <span class="token comment">// each time the values change</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          type<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Result hook</span>
+      <span class="token function">result</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>You can then access the subscription with <code>this.$apollo.subscriptions.&lt;name&gt;</code>.</p> <div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>Just like for queries, you can declare the subscription <a href="/vue-apollo/guide/apollo/queries.html#option-function">with a function</a>, and you can declare the <code>query</code> option <a href="/vue-apollo/guide/apollo/queries.html#reactive-query-definition">with a reactive function</a>.</p></div> <h2 id="skipping-the-subscription"><a href="#skipping-the-subscription" aria-hidden="true" class="header-anchor">#</a> Skipping the subscription</h2> <p>If the subscription is skipped, it will disable it and it will not be updated anymore. You can use the <code>skip</code> option:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Apollo-specific options</span>
+apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Subscriptions</span>
+  $subscribe<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// When a tag is added</span>
+    tags<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`subscription tags($type: String!) {
+        tagAdded(type: $type) {
+          id
+          label
+          type
+        }
+      }`</span></span><span class="token punctuation">,</span>
+      <span class="token comment">// Reactive variables</span>
+      <span class="token function">variables</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          type<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Result hook</span>
+      <span class="token function">result</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Let's update the local data</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>tags<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>tagAdded<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Skip the subscription</span>
+      <span class="token function">skip</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>skipSubscription
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>Here, <code>skip</code> will be called automatically when the <code>skipSubscription</code> component property changes.</p> <p>You can also access the subscription directly and set the <code>skip</code> property:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span>subscriptions<span class="token punctuation">.</span>tags<span class="token punctuation">.</span>skip <span class="token operator">=</span> <span class="token boolean">true</span>
+</code></pre></div><h2 id="manually-adding-a-smart-subscription"><a href="#manually-adding-a-smart-subscription" aria-hidden="true" class="header-anchor">#</a> Manually adding a smart Subscription</h2> <p>You can manually add a smart subscription with the <code>$apollo.addSmartSubscription(key, options)</code> method:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">created</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span><span class="token function">addSmartSubscription</span><span class="token punctuation">(</span><span class="token string">'tagAdded'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Same options like '$subscribe' above</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>Internally, this method is called for each entry of the <code>$subscribe</code> object in the component <code>apollo</code> option.</p></div> <h2 id="standard-apollo-subscribe"><a href="#standard-apollo-subscribe" aria-hidden="true" class="header-anchor">#</a> Standard Apollo subscribe</h2> <p>Use the <code>$apollo.subscribe()</code> method to subscribe to a GraphQL subscription that will get killed automatically when the component is destroyed. It will <strong>NOT</strong> create a Smart Subscription.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> subQuery <span class="token operator">=</span> gql<span class="token template-string"><span class="token string">`subscription tags($type: String!) {
+    tagAdded(type: $type) {
+      id
+      label
+      type
+    }
+  }`</span></span>
+
+  <span class="token keyword">const</span> observer <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    query<span class="token punctuation">:</span> subQuery<span class="token punctuation">,</span>
+    variables<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      type<span class="token punctuation">:</span> <span class="token string">'City'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  observer<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function">next</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Akryum/vue-apollo/edit/master/docs/guide/apollo/subscriptions.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">8/30/2018, 1:44:17 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vue-apollo/guide/apollo/mutations.html" class="prev">
+          Mutations
+        </a></span> <span class="next"><a href="/vue-apollo/guide/apollo/pagination.html">
+          Pagination with fetchMore
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/vue-apollo/assets/js/19.9bf41322.js" defer></script><script src="/vue-apollo/assets/js/app.8f76b078.js" defer></script>
+  </body>
+</html>

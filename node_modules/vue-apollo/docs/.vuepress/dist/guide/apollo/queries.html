@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Queries | Vue Apollo</title>
+    <meta name="description" content="🚀 Integrate GraphQL in your Vue.js apps!">
+    <link rel="icon" href="/vue-apollo/favicon.png">
+    
+    <link rel="preload" href="/vue-apollo/assets/css/styles.8f76b078.css" as="style"><link rel="preload" href="/vue-apollo/assets/js/app.8f76b078.js" as="script"><link rel="preload" href="/vue-apollo/assets/js/17.646d3dcf.js" as="script"><link rel="prefetch" href="/vue-apollo/assets/js/26.52db218a.js"><link rel="prefetch" href="/vue-apollo/assets/css/1.styles.a0f3b9b0.css"><link rel="prefetch" href="/vue-apollo/assets/js/1.a0f3b9b0.js"><link rel="prefetch" href="/vue-apollo/assets/css/2.styles.b0036c7a.css"><link rel="prefetch" href="/vue-apollo/assets/js/2.b0036c7a.js"><link rel="prefetch" href="/vue-apollo/assets/js/3.e0e382e2.js"><link rel="prefetch" href="/vue-apollo/assets/js/4.675f2e4d.js"><link rel="prefetch" href="/vue-apollo/assets/js/5.12880ef9.js"><link rel="prefetch" href="/vue-apollo/assets/js/6.e45ff41a.js"><link rel="prefetch" href="/vue-apollo/assets/js/7.989e6aff.js"><link rel="prefetch" href="/vue-apollo/assets/js/8.2ebb489a.js"><link rel="prefetch" href="/vue-apollo/assets/js/9.36570ac6.js"><link rel="prefetch" href="/vue-apollo/assets/js/10.597f2684.js"><link rel="prefetch" href="/vue-apollo/assets/js/11.cb3d1885.js"><link rel="prefetch" href="/vue-apollo/assets/js/12.06a699e2.js"><link rel="prefetch" href="/vue-apollo/assets/js/13.4f5cf254.js"><link rel="prefetch" href="/vue-apollo/assets/js/14.5866596e.js"><link rel="prefetch" href="/vue-apollo/assets/js/15.acdf306e.js"><link rel="prefetch" href="/vue-apollo/assets/js/16.f5aee313.js"><link rel="prefetch" href="/vue-apollo/assets/js/18.125ac48a.js"><link rel="prefetch" href="/vue-apollo/assets/js/19.9bf41322.js"><link rel="prefetch" href="/vue-apollo/assets/js/20.e962e864.js"><link rel="prefetch" href="/vue-apollo/assets/js/21.1e918d70.js"><link rel="prefetch" href="/vue-apollo/assets/js/22.0634b974.js"><link rel="prefetch" href="/vue-apollo/assets/js/23.56d9c8d3.js"><link rel="prefetch" href="/vue-apollo/assets/js/24.a7be7b2f.js"><link rel="prefetch" href="/vue-apollo/assets/js/25.765fde55.js"><link rel="prefetch" href="/vue-apollo/assets/js/27.030d3b94.js"><link rel="prefetch" href="/vue-apollo/assets/js/28.29d8f5ff.js"><link rel="prefetch" href="/vue-apollo/assets/js/29.1502ff72.js"><link rel="prefetch" href="/vue-apollo/assets/js/30.c84a7fbd.js"><link rel="prefetch" href="/vue-apollo/assets/js/31.d945e73a.js"><link rel="prefetch" href="/vue-apollo/assets/js/32.856305af.js"><link rel="prefetch" href="/vue-apollo/assets/js/33.a1d103b7.js"><link rel="prefetch" href="/vue-apollo/assets/js/34.e1aa0b7f.js"><link rel="prefetch" href="/vue-apollo/assets/js/35.338b5f6d.js"><link rel="prefetch" href="/vue-apollo/assets/js/36.d8f30036.js"><link rel="prefetch" href="/vue-apollo/assets/js/37.33a2e714.js"><link rel="prefetch" href="/vue-apollo/assets/js/38.8f6c21b0.js"><link rel="prefetch" href="/vue-apollo/assets/js/39.d546791b.js"><link rel="prefetch" href="/vue-apollo/assets/js/40.8e27e6bd.js"><link rel="prefetch" href="/vue-apollo/assets/js/41.905ab6dc.js"><link rel="prefetch" href="/vue-apollo/assets/js/42.bbe7ca81.js"><link rel="prefetch" href="/vue-apollo/assets/js/43.47369d02.js"><link rel="prefetch" href="/vue-apollo/assets/js/44.281a703c.js"><link rel="prefetch" href="/vue-apollo/assets/js/45.d4d07452.js"><link rel="prefetch" href="/vue-apollo/assets/js/46.6cbdf77c.js"><link rel="prefetch" href="/vue-apollo/assets/js/47.fcbcf70d.js"><link rel="prefetch" href="/vue-apollo/assets/js/48.8b08fb55.js"><link rel="prefetch" href="/vue-apollo/assets/js/49.b38bc17b.js"><link rel="prefetch" href="/vue-apollo/assets/js/50.bdb15caa.js"><link rel="prefetch" href="/vue-apollo/assets/js/51.0dd86c6d.js"><link rel="prefetch" href="/vue-apollo/assets/js/52.03c4b936.js"><link rel="prefetch" href="/vue-apollo/assets/js/53.0a08cfe9.js"><link rel="prefetch" href="/vue-apollo/assets/js/54.788112e4.js"><link rel="prefetch" href="/vue-apollo/assets/js/55.8fc49327.js">
+    <link rel="stylesheet" href="/vue-apollo/assets/css/1.styles.a0f3b9b0.css"><link rel="stylesheet" href="/vue-apollo/assets/css/2.styles.b0036c7a.css"><link rel="stylesheet" href="/vue-apollo/assets/css/styles.8f76b078.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vue-apollo/" class="home-link router-link-active"><!----> <span class="site-name">Vue Apollo</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-apollo/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/vue-apollo/api/" class="nav-link">API Reference</a></div><div class="nav-item"><a href="/vue-apollo/migration/" class="nav-link">Migration</a></div><div class="nav-item"><a href="https://github.com/Akryum/vue-cli-plugin-apollo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CLI plugin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.patreon.com/akryum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-apollo/guide/apollo/queries.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/vue-apollo/zh-cn/guide/apollo/queries.html" class="nav-link">简体中文</a></li></ul></div></div> <a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-apollo/guide/" class="nav-link router-link-active">Guide</a></div><div class="nav-item"><a href="/vue-apollo/api/" class="nav-link">API Reference</a></div><div class="nav-item"><a href="/vue-apollo/migration/" class="nav-link">Migration</a></div><div class="nav-item"><a href="https://github.com/Akryum/vue-cli-plugin-apollo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CLI plugin
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.patreon.com/akryum" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-apollo/guide/apollo/queries.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/vue-apollo/zh-cn/guide/apollo/queries.html" class="nav-link">简体中文</a></li></ul></div></div> <a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/vue-apollo/guide/" class="sidebar-link">Introduction</a></li><li><a href="/vue-apollo/guide/installation.html" class="sidebar-link">Installation</a></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Basic usage</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/apollo/" class="sidebar-link">Usage in Vue components</a></li><li><a href="/vue-apollo/guide/apollo/queries.html" class="active sidebar-link">Queries</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#simple-query" class="sidebar-link">Simple query</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#query-with-parameters" class="sidebar-link">Query with parameters</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#loading-state" class="sidebar-link">Loading state</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#option-function" class="sidebar-link">Option function</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#reactive-query-definition" class="sidebar-link">Reactive query definition</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#reactive-parameters" class="sidebar-link">Reactive parameters</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#skipping-the-query" class="sidebar-link">Skipping the query</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#reactive-query-example" class="sidebar-link">Reactive Query Example</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#manually-adding-a-smart-query" class="sidebar-link">Manually adding a smart Query</a></li><li class="sidebar-sub-header"><a href="/vue-apollo/guide/apollo/queries.html#advanced-options" class="sidebar-link">Advanced options</a></li></ul></li><li><a href="/vue-apollo/guide/apollo/mutations.html" class="sidebar-link">Mutations</a></li><li><a href="/vue-apollo/guide/apollo/subscriptions.html" class="sidebar-link">Subscriptions</a></li><li><a href="/vue-apollo/guide/apollo/pagination.html" class="sidebar-link">Pagination with fetchMore</a></li><li><a href="/vue-apollo/guide/apollo/special-options.html" class="sidebar-link">Special options</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Components</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/components/" class="sidebar-link">What are Apollo components?</a></li><li><a href="/vue-apollo/guide/components/query.html" class="sidebar-link">ApolloQuery</a></li><li><a href="/vue-apollo/guide/components/mutation.html" class="sidebar-link">ApolloMutation</a></li><li><a href="/vue-apollo/guide/components/subscribe-to-more.html" class="sidebar-link">ApolloSubscribeToMore</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Advanced topics</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/vue-apollo/guide/multiple-clients.html" class="sidebar-link">Multiple clients</a></li><li><a href="/vue-apollo/guide/ssr.html" class="sidebar-link">Server-Side Rendering</a></li><li><a href="/vue-apollo/guide/local-state.html" class="sidebar-link">Local state</a></li><li><a href="/vue-apollo/guide/testing.html" class="sidebar-link">Testing</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="queries"><a href="#queries" aria-hidden="true" class="header-anchor">#</a> Queries</h1> <p>In GraphQL, a query is a request made to the API to retrieve data. It is represented with a <em>GraphQL document</em> like this:</p> <div class="language-graphql extra-class"><pre class="language-graphql"><code><span class="token keyword">query</span> myHelloQueryName <span class="token punctuation">{</span>
+  hello
+<span class="token punctuation">}</span>
+</code></pre></div><p>In the <code>apollo</code> object, add an attribute for each property you want to feed with the result of an Apollo query. Each one of them will become a Smart Query.</p> <h2 id="simple-query"><a href="#simple-query" aria-hidden="true" class="header-anchor">#</a> Simple query</h2> <p>Use <code>gql</code> to write your GraphQL queries:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> gql <span class="token keyword">from</span> <span class="token string">'graphql-tag'</span>
+</code></pre></div><p>Put the <a href="https://github.com/apollographql/graphql-tag" target="_blank" rel="noopener noreferrer">gql<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> query directly as the value:</p> <div class="language-js extra-class"><pre class="language-js"><code>apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Simple query that will update the 'hello' vue property</span>
+  hello<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`{hello}`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>You can then access the query with <code>this.$apollo.queries.&lt;name&gt;</code>.</p> <p>You can initialize the property in your vue component's <code>data</code> hook:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Initialize your apollo data</span>
+    hello<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>Server-side, add the corresponding schema and resolver:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+type Query {
+  hello: String
+}
+
+schema {
+  query: Query
+}
+`</span></span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> resolvers <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Query<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">hello</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> args<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token string">&quot;Hello world!&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>For more info, visit the <a href="https://www.apollographql.com/docs/apollo-server/" target="_blank" rel="noopener noreferrer">apollo doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <p>You can then use your property as usual in your vue component:</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>apollo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+      {{hello}}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="query-with-parameters"><a href="#query-with-parameters" aria-hidden="true" class="header-anchor">#</a> Query with parameters</h2> <p>You can add variables (read parameters) to your <code>gql</code> query by declaring <code>query</code> and <code>variables</code> in an object:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Apollo-specific options</span>
+apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Query with parameters</span>
+  ping<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// gql query</span>
+    query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`query PingMessage($message: String!) {
+      ping(message: $message)
+    }`</span></span><span class="token punctuation">,</span>
+    <span class="token comment">// Static parameters</span>
+    variables<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      message<span class="token punctuation">:</span> <span class="token string">'Meow'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>You can use the apollo <code>watchQuery</code> options in the object, like:</p> <ul><li><code>fetchPolicy</code></li> <li><code>pollInterval</code></li> <li>...</li></ul> <p>See the <a href="https://www.apollographql.com/docs/react/api/apollo-client.html#ApolloClient.watchQuery" target="_blank" rel="noopener noreferrer">apollo doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> for more details.</p> <p>For example, you could add the <code>fetchPolicy</code> apollo option like this:</p> <div class="language-js extra-class"><pre class="language-js"><code>apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Query with parameters</span>
+  ping<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`query PingMessage($message: String!) {
+      ping(message: $message)
+    }`</span></span><span class="token punctuation">,</span>
+    variables<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      message<span class="token punctuation">:</span> <span class="token string">'Meow'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// Additional options here</span>
+    fetchPolicy<span class="token punctuation">:</span> <span class="token string">'cache-and-network'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>Again, you can initialize your property in your vue component:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Initialize your apollo data</span>
+    ping<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>Server-side, add the corresponding schema and resolver:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+type Query {
+  ping(message: String!): String
+}
+
+schema {
+  query: Query
+}
+`</span></span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> resolvers <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Query<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">ping</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token punctuation">{</span> message <span class="token punctuation">}</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`Answering </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>And then use it in your vue component:</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>apollo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Ping<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+      {{ ping }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="loading-state"><a href="#loading-state" aria-hidden="true" class="header-anchor">#</a> Loading state</h2> <p>You can display a loading state thanks to the <code>$apollo.loading</code> prop:</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>$apollo.loading<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Loading...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Or for this specific <code>ping</code> query:</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>$apollo.queries.ping.loading<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Loading...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="option-function"><a href="#option-function" aria-hidden="true" class="header-anchor">#</a> Option function</h2> <p>You can use a function which will be called once when the component is created and it must return the option object:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Apollo-specific options</span>
+apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Query with parameters</span>
+  <span class="token function">ping</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// This is called once when the component is created</span>
+    <span class="token comment">// It must return the option object</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token comment">// gql query</span>
+      query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`query PingMessage($message: String!) {
+        ping(message: $message)
+      }`</span></span><span class="token punctuation">,</span>
+      <span class="token comment">// Static parameters</span>
+      variables<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        message<span class="token punctuation">:</span> <span class="token string">'Meow'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>This also works for <a href="/vue-apollo/guide/apollo/subscriptions.html">subscriptions</a>.</p></div> <h2 id="reactive-query-definition"><a href="#reactive-query-definition" aria-hidden="true" class="header-anchor">#</a> Reactive query definition</h2> <p>You can use a function for the <code>query</code> option. This will update the graphql query definition automatically:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// The featured tag can be either a random tag or the last added tag</span>
+featuredTag<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token function">query</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Here you can access the component instance with 'this'</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>showTag <span class="token operator">===</span> <span class="token string">'random'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> gql<span class="token template-string"><span class="token string">`{
+        randomTag {
+          id
+          label
+          type
+        }
+      }`</span></span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>showTag <span class="token operator">===</span> <span class="token string">'last'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> gql<span class="token template-string"><span class="token string">`{
+        lastTag {
+          id
+          label
+          type
+        }
+      }`</span></span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// We need this to assign the value of the 'featuredTag' component property</span>
+  update<span class="token punctuation">:</span> data <span class="token operator">=&gt;</span> data<span class="token punctuation">.</span>randomTag <span class="token operator">||</span> data<span class="token punctuation">.</span>lastTag<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>This also works for <a href="/vue-apollo/guide/apollo/subscriptions.html">subscriptions</a>.</p></div> <h2 id="reactive-parameters"><a href="#reactive-parameters" aria-hidden="true" class="header-anchor">#</a> Reactive parameters</h2> <p>Use a function instead to make the parameters reactive with vue properties:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Apollo-specific options</span>
+apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Query with parameters</span>
+  ping<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`query PingMessage($message: String!) {
+      ping(message: $message)
+    }`</span></span><span class="token punctuation">,</span>
+    <span class="token comment">// Reactive parameters</span>
+    <span class="token function">variables</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Use vue reactive properties here</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          message<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pingInput<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>This will re-fetch the query each time a parameter changes, for example:</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>apollo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Ping<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pingInput<span class="token punctuation">&quot;</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Enter a message<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+      {{ping}}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="skipping-the-query"><a href="#skipping-the-query" aria-hidden="true" class="header-anchor">#</a> Skipping the query</h2> <p>If the query is skipped, it will disable it and the result will not be updated anymore. You can use the <code>skip</code> option:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Apollo-specific options</span>
+apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  tags<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// GraphQL Query</span>
+    query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`query tagList ($type: String!) {
+      tags(type: $type) {
+        id
+        label
+      }
+    }`</span></span><span class="token punctuation">,</span>
+    <span class="token comment">// Reactive variables</span>
+    <span class="token function">variables</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>type<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// Disable the query</span>
+    <span class="token function">skip</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>skipQuery
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>Here, <code>skip</code> will be called automatically when the <code>skipQuery</code> component property changes.</p> <p>You can also access the query directly and set the <code>skip</code> property:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span>queries<span class="token punctuation">.</span>tags<span class="token punctuation">.</span>skip <span class="token operator">=</span> <span class="token boolean">true</span>
+</code></pre></div><h2 id="reactive-query-example"><a href="#reactive-query-example" aria-hidden="true" class="header-anchor">#</a> Reactive Query Example</h2> <p>Here is a reactive query example using polling:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Apollo-specific options</span>
+apollo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 'tags' data property on vue instance</span>
+  tags<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    query<span class="token punctuation">:</span> gql<span class="token template-string"><span class="token string">`query tagList {
+      tags {
+        id,
+        label
+      }
+    }`</span></span><span class="token punctuation">,</span>
+    pollInterval<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token comment">// ms</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>Here is how the server-side looks like:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+type Tag {
+  id: Int
+  label: String
+}
+
+type Query {
+  tags: [Tag]
+}
+
+schema {
+  query: Query
+}
+`</span></span>
+
+<span class="token comment">// Fake word generator</span>
+<span class="token keyword">import</span> casual <span class="token keyword">from</span> <span class="token string">'casual'</span>
+
+<span class="token comment">// Let's generate some tags</span>
+<span class="token keyword">var</span> id <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">var</span> tags <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">42</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">addTag</span><span class="token punctuation">(</span>casual<span class="token punctuation">.</span>word<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">addTag</span><span class="token punctuation">(</span>label<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> t <span class="token operator">=</span> <span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> id<span class="token operator">++</span><span class="token punctuation">,</span>
+    label<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  tags<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> t
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> resolvers <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Query<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">tags</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> args<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> tags
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="manually-adding-a-smart-query"><a href="#manually-adding-a-smart-query" aria-hidden="true" class="header-anchor">#</a> Manually adding a smart Query</h2> <p>You can manually add a smart query with the <code>$apollo.addSmartQuery(key, options)</code> method:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">created</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$apollo<span class="token punctuation">.</span><span class="token function">addSmartQuery</span><span class="token punctuation">(</span><span class="token string">'comments'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Same options like above</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>Internally, this method is called for each query entry in the component <code>apollo</code> option.</p></div> <h2 id="advanced-options"><a href="#advanced-options" aria-hidden="true" class="header-anchor">#</a> Advanced options</h2> <p>There are even more options specific to vue-apollo, see the <a href="/vue-apollo/api/smart-query.html">API Reference</a>.</p></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/Akryum/vue-apollo/edit/master/docs/guide/apollo/queries.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/8/2018, 5:40:45 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vue-apollo/guide/apollo/" class="prev router-link-active">
+          Usage in Vue components
+        </a></span> <span class="next"><a href="/vue-apollo/guide/apollo/mutations.html">
+          Mutations
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/vue-apollo/assets/js/17.646d3dcf.js" defer></script><script src="/vue-apollo/assets/js/app.8f76b078.js" defer></script>
+  </body>
+</html>
