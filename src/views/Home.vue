@@ -61,6 +61,11 @@
               <router-link :to="`/book/${book.id}`">
                 {{ book.id }}. {{ book.title }}
               </router-link>
+              <div>{{ book.author }}</div>
+              <img
+                :src="`http://localhost:8000/img/${book.image}`"
+                alt="cover image"
+              />
             </div>
           </div>
         </template>
@@ -72,7 +77,14 @@
           <div v-if="isLoading">Loading...</div>
           <div v-else>
             <div v-for="book of data.booksByFeatured" :key="book.id">
-              {{ book.id }} {{ book.title }}
+              <router-link :to="`/book/${book.id}`">
+                {{ book.id }}. {{ book.title }}
+              </router-link>
+              <div>{{ book.author }}</div>
+              <img
+                :src="`http://localhost:8000/img/${book.image}`"
+                alt="cover image"
+              />
             </div>
           </div>
         </template>
@@ -83,7 +95,14 @@
         <div v-if="isLoading">Loading...</div>
         <div v-else>
           <div v-for="book of data.category.books" :key="book.id">
-            {{ book.id }} {{ book.title }}
+            <router-link :to="`/book/${book.id}`">
+              {{ book.id }}. {{ book.title }}
+            </router-link>
+            <div>{{ book.author }}</div>
+            <img
+              :src="`http://localhost:8000/img/${book.image}`"
+              alt="cover image"
+            />
           </div>
         </div>
       </template>
