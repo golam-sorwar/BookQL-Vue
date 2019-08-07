@@ -1,0 +1,24 @@
+mutation(
+  $id: ID!
+  $title: String!
+  $author: String!
+  $image: String
+  $link: String
+  $description: String
+  $featured: Boolean
+  $category_id: Int!
+) {
+  updateBook(
+    id: $id
+    title: $title
+    author: $author
+    image: $image
+    link: $link
+    description: $description
+    featured: $featured
+    category_id: $category_id
+  ) {
+    id
+    title
+  }
+}
