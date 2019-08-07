@@ -23,6 +23,14 @@ export default new Router({
         import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
     {
+      path: "/books/add",
+      name: "book",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "book" */ "./views/AddBook.vue")
+    },
+    {
       path: "/book/:id",
       name: "book",
       // route level code-splitting
