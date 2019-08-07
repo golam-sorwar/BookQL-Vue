@@ -1,18 +1,18 @@
 <template>
   <div class="edit container mt-12">
-    <h1 class="mb-4">Edit Book</h1>
-    <form action="#" method="POST" @submit.prevent="editBook">
+    <h1 class="text-4xl text-center">Edit Book</h1>
+    <form action="#" class="w-full max-w-xl mx-64" method="POST" @submit.prevent="editBook">
       <div class="form-group">
         <label class="font-bold mb-2" for="title">Title</label>
-        <input type="text" name="title" id="title" v-model="title" />
+        <input type="text" name="title" id="title" v-model="title" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"/>
       </div>
       <div class="form-group">
         <label class="font-bold mb-2" for="author">Author</label>
-        <input type="text" name="author" id="author" v-model="author" />
+        <input type="text" name="author" id="author" v-model="author" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"/>
       </div>
       <div class="form-group">
         <label class="font-bold mb-2" for="image">Image</label>
-        <input type="text" name="image" id="image" v-model="image" />
+        <input type="text" name="image" id="image" v-model="image" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"/>
       </div>
       <div class="form-group">
         <label class="font-bold mb-2" for="description">Description</label>
@@ -22,11 +22,12 @@
           cols="30"
           rows="10"
           v-model="description"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         ></textarea>
       </div>
       <div class="form-group">
         <label class="font-bold mb-2" for="link">Link</label>
-        <input type="text" name="link" id="link" v-model="link" />
+        <input type="text" name="link" id="link" v-model="link" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"/>
       </div>
       <div class="form-group">
         <label class="font-bold mb-2"
@@ -42,7 +43,7 @@
         <ApolloQuery :query="require('@/graphql/queries/Categories.gql')">
           <template slot-scope="{ result: { data, loading }, isLoading }">
             <div v-if="isLoading">Loading...</div>
-            <select v-else v-model="category_id">
+            <select v-else v-model="category_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
               <option
                 v-for="category of data.categories"
                 :key="category.id"
@@ -55,8 +56,8 @@
         </ApolloQuery>
       </div>
 
-      <div class="form-group">
-        <button type="submit">Update book</button>
+      <div class="form-group text-center">
+        <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-indigo-500 rounded">Update book</button>
       </div>
     </form>
   </div>
@@ -138,20 +139,5 @@ export default {
 .form-group {
   margin-bottom: 32px;
 }
-input[type="text"],
-textarea {
-  padding: 10px 14px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-}
-label {
-  display: block;
-}
-button {
-  padding: 16px;
-  background: #027bff;
-  color: white;
-  border-radius: 5px;
-  font-size: 16px;
-}
+
 </style>
